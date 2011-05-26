@@ -17,6 +17,11 @@ return array(
 	 * Amazon Associates ID
 	 */
 	'AWS_ASSOC_ID' => '',
+
+	/**
+	 * The locale you want to search in (chooses the endpoint in AmazonPAS::pas_authenticate)
+	 */
+	'AWS_DEFAULT_LOCALE' => NULL,
 	
 	/**
 	 * Amazon Account ID without dashes. Used for identification with Amazon EC2. Found in the AWS Security
