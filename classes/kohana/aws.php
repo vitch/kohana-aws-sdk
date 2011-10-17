@@ -2,6 +2,13 @@
 
 class Kohana_AWS
 {
+	public static function get_s3()
+	{
+		self::_initialise();
+		require_once dirname(__FILE__) . '/../../vendor/aws-sdk-for-php/sdk.class.php';
+		return new AmazonS3();
+	}
+
 
 	public static function get_pas()
 	{
