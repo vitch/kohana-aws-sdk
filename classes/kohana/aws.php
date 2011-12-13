@@ -1,18 +1,108 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
+require_once dirname(__FILE__) . '/../../vendor/aws-sdk-for-php/sdk.class.php';
 
 class Kohana_AWS
 {
+	public static function get_as()
+	{
+		self::_initialise();
+		return new AmazonAS();
+	}
+
+	public static function get_cloudformation()
+	{
+		self::_initialise();
+		return new AmazonCloudFormation();
+	}
+
+	public static function get_cloudfront()
+	{
+		self::_initialise();
+		return new AmazonCloudFront();
+	}
+
+	public static function get_cloudwatch()
+	{
+		self::_initialise();
+		return new AmazonCloudWatch();
+	}
+
+	public static function get_ec2()
+	{
+		self::_initialise();
+		return new AmazonEC2();
+	}
+
+	public static function get_beanstalk()
+	{
+		self::_initialise();
+		return new AmazonElasticBeanstalk();
+	}
+
+	public static function get_elb()
+	{
+		self::_initialise();
+		return new AmazonELB();
+	}
+
+	public static function get_emr()
+	{
+		self::_initialise();
+		return new AmazonEMR();
+	}
+
+	public static function get_iam()
+	{
+		self::_initialise();
+		return new AmazonIAM();
+	}
+
+	public static function get_importexport()
+	{
+		self::_initialise();
+		return new AmazonImportExport();
+	}
+
+	public static function get_rds()
+	{
+		self::_initialise();
+		return new AmazonRDS();
+	}
+
+	public static function get_sdb()
+	{
+		self::_initialise();
+		return new AmazonSDB();
+	}
+
+	public static function get_ses()
+	{
+		self::_initialise();
+		return new AmazonSES();
+	}
+
+	public static function get_sns()
+	{
+		self::_initialise();
+		return new AmazonSNS();
+	}
+
+	public static function get_sqs()
+	{
+		self::_initialise();
+		return new AmazonSQS();
+	}
+
 	public static function get_s3()
 	{
 		self::_initialise();
-		require_once dirname(__FILE__) . '/../../vendor/aws-sdk-for-php/sdk.class.php';
 		return new AmazonS3();
 	}
-	
+
+
 	public static function get_pas()
 	{
 		self::_initialise();
-		require_once dirname(__FILE__) . '/../../vendor/aws-sdk-for-php/sdk.class.php';
 		return new AmazonPAS();
 	}
 
